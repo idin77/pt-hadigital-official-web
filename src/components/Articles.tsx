@@ -1,8 +1,113 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Calendar, User, Clock, ArrowRight, Share2, MessageCircle } from "lucide-react";
 import { Article } from "../types";
 import { articles } from "../data";
+
+const parseBoldText = (text: string) => {
+  const parts = text.split(/\*\*([^*]+)\*\*/g);
+  return parts.map((part, index) => {
+    if (index % 2 === 1) {
+      return (
+        <strong key={index} className="font-extrabold text-[#01F5FF]">
+          {part}
+        </strong>
+      );
+    }
+    return part;
+  });
+};
+
+const renderArticleContent = (content: string) => {
+  const lines = content.split("\n");
+  let listBuffer: React.ReactNode[] = [];
+  const renderedElements: React.ReactNode[] = [];
+
+  const flushList = (key: string | number) => {
+    if (listBuffer.length > 0) {
+      renderedElements.push(
+        <div key={`list-group-${key}`} className="space-y-2.5 my-4 pl-1">
+          {...listBuffer}
+        </div>
+      );
+      listBuffer = [];
+    }
+  };
+
+  lines.forEach((line, idx) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      flushList(idx);
+      renderedElements.push(<div key={`empty-${idx}`} className="h-4" />);
+      return;
+    }
+
+    // Subheaders ##
+    if (trimmed.startsWith("## ")) {
+      flushList(idx);
+      renderedElements.push(
+        <h3
+          key={`h2-${idx}`}
+          className="text-lg sm:text-xl font-bold text-white mt-8 mb-4 border-l-4 border-[#01F5FF] pl-4 font-display tracking-tight"
+        >
+          {parseBoldText(trimmed.replace("## ", ""))}
+        </h3>
+      );
+      return;
+    }
+
+    // Subheaders ###
+    if (trimmed.startsWith("### ")) {
+      flushList(idx);
+      renderedElements.push(
+        <h4
+          key={`h3-${idx}`}
+          className="text-base sm:text-lg font-bold text-[#01F5FF] mt-6 mb-3 font-display"
+        >
+          {parseBoldText(trimmed.replace("### ", ""))}
+        </h4>
+      );
+      return;
+    }
+
+    // Bullets - or *
+    if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+      const pureText = trimmed.replace(/^[-*]\s+/, "");
+      listBuffer.push(
+        <div key={`bullet-${idx}`} className="flex items-start space-x-3 text-gray-300 text-sm sm:text-base leading-relaxed">
+          <span className="text-[#01F5FF] text-lg leading-none mt-0.5 shrink-0">•</span>
+          <span className="flex-1">{parseBoldText(pureText)}</span>
+        </div>
+      );
+      return;
+    }
+
+    // Numbered lists e.g. "1. "
+    const orderedMatch = trimmed.match(/^(\d+)\.\s+(.*)$/);
+    if (orderedMatch) {
+      const num = orderedMatch[1];
+      const pureText = orderedMatch[2];
+      listBuffer.push(
+        <div key={`ordered-${idx}`} className="flex items-start space-x-3 text-gray-300 text-sm sm:text-base leading-relaxed">
+          <span className="font-mono text-[#01F5FF] font-bold shrink-0 mt-0.5">{num}.</span>
+          <span className="flex-1">{parseBoldText(pureText)}</span>
+        </div>
+      );
+      return;
+    }
+
+    // Normal paragraph
+    flushList(idx);
+    renderedElements.push(
+      <p key={`p-${idx}`} className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 font-normal">
+        {parseBoldText(trimmed)}
+      </p>
+    );
+  });
+
+  flushList("final");
+  return renderedElements;
+};
 
 export default function Articles() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
@@ -194,8 +299,8 @@ export default function Articles() {
                   </div>
 
                   {/* Article Markdown simulated body text */}
-                  <div className="space-y-4 text-gray-300 text-sm leading-relaxed whitespace-pre-line font-normal">
-                    {selectedArticle.content}
+                  <div className="space-y-1">
+                    {renderArticleContent(selectedArticle.content)}
                   </div>
                 </div>
 
@@ -209,7 +314,7 @@ export default function Articles() {
                     onClick={() => {
                       setSelectedArticle(null);
                       const text = encodeURIComponent(`Halo PT HADIGITAL, saya baru saja membaca artikel *"${selectedArticle.title}"* dan ingin berdiskusi lebih lanjut mengenai strategi serupa.`);
-                      window.open(`https://wa.me/6285282632984?text=${text}`, "_blank", "noopener,noreferrer");
+                      window.open(`https://wa.me/6285722603355?text=${text}`, "_blank", "noopener,noreferrer");
                     }}
                     className="w-full sm:w-auto py-2.5 px-4 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white text-xs font-semibold rounded-lg flex items-center justify-center space-x-1.5 shadow-md cursor-pointer"
                   >

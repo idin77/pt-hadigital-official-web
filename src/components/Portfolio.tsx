@@ -91,9 +91,11 @@ export default function Portfolio() {
                       <h4 className="text-white font-semibold text-lg">
                         {item.title}
                       </h4>
-                      <div className="inline-flex items-center text-xs font-semibold text-blue-400 gap-1">
-                        <span>Lihat Studi Kasus</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
+                      <div className="flex items-center space-x-3 text-xs font-semibold text-blue-400 mt-2">
+                        <div className="flex items-center gap-1 group-hover:text-white transition-colors">
+                          <span>Lihat Studi Kasus</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -109,6 +111,20 @@ export default function Portfolio() {
                       {item.category.split(" ")[0]}
                     </span>
                   </div>
+
+                  {/* Hidden / Subtle elegant Live launch link directly on card */}
+                  {item.liveUrl && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(item.liveUrl, "_blank", "noopener,noreferrer");
+                      }}
+                      title="Peluncuran Situs Langsung (Live Website)"
+                      className="absolute top-4 right-4 bg-black/40 hover:bg-[#01F5FF] text-gray-300 hover:text-black backdrop-blur-md border border-white/10 p-2 rounded-full z-20 transition-all duration-300 active:scale-95 cursor-pointer flex items-center justify-center shadow-lg"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
 
                 {/* Text Content */}
@@ -116,7 +132,7 @@ export default function Portfolio() {
                   <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-bold block">
                     {item.client}
                   </span>
-                  <h3 className="font-semibold text-base sm:text-lg text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-semibold text-base sm:text-lg text-white group-hover:text-[#01F5FF] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-400 line-clamp-2 leading-relaxed">
@@ -172,9 +188,21 @@ export default function Portfolio() {
                     <div className="w-3 h-3 rounded-full bg-rose-500" />
                     <div className="w-3 h-3 rounded-full bg-amber-500" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                    <span className="text-[10px] text-gray-500 font-mono ml-4 truncate max-w-[200px]">
-                      https://{selectedProject.id}.hadigital.com/preview
-                    </span>
+                    {selectedProject.liveUrl ? (
+                      <a
+                        href={selectedProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] text-gray-400 hover:text-[#01F5FF] font-mono ml-4 truncate max-w-[260px] hover:underline flex items-center gap-1"
+                      >
+                        <span>{selectedProject.liveUrl}</span>
+                        <ExternalLink className="w-2.5 h-2.5" />
+                      </a>
+                    ) : (
+                      <span className="text-[10px] text-gray-500 font-mono ml-4 truncate max-w-[200px]">
+                        https://{selectedProject.id}.hadigital.com/preview
+                      </span>
+                    )}
                   </div>
                   <button
                     onClick={() => setSelectedProject(null)}
@@ -185,14 +213,26 @@ export default function Portfolio() {
                 </div>
 
                 {/* Hero image wrapped as live preview mockup */}
-                <div className="relative aspect-video w-full overflow-hidden bg-gray-950 border-b border-white/5">
+                <div 
+                  onClick={() => selectedProject.liveUrl && window.open(selectedProject.liveUrl, "_blank", "noopener,noreferrer")}
+                  className="relative aspect-video w-full overflow-hidden bg-gray-950 border-b border-white/5 cursor-pointer group/modalimg"
+                  title="Klik untuk membuka demo situs secara live"
+                >
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover/modalimg:scale-[1.03] transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A] to-transparent pointer-events-none" />
+                  
+                  {selectedProject.liveUrl && (
+                    <div className="absolute top-4 right-4 bg-black/60 shadow-lg backdrop-blur-md border border-[#01F5FF]/30 px-3 py-1.5 rounded-xl text-white text-[10px] font-mono flex items-center space-x-1.5 group-hover/modalimg:bg-[#01F5FF] group-hover/modalimg:text-black transition-all">
+                      <span>BUKA LIVE FITUR</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </div>
+                  )}
+
                   <div className="absolute bottom-4 left-4">
                     <span className="text-[10px] font-mono tracking-widest bg-blue-600 text-white font-bold px-2 py-0.5 rounded uppercase">
                       STUDI KASUS AKTIF
@@ -271,16 +311,27 @@ export default function Portfolio() {
                 </div>
 
                 {/* Footer and trigger action */}
-                <div className="p-6 bg-white/5 border-t border-white/5 flex gap-3">
+                <div className="p-6 bg-[#0B1F3A] border-t border-white/5 flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={() => {
                       const textSpec = encodeURIComponent(`Halo PT HADIGITAL, saya melihat proyek portfolio *${selectedProject.title}* (${selectedProject.client}) dan tertarik membangun website dengan spesifikasi serupa. Bisakah kita berdiskusi?`);
-                      window.open(`https://wa.me/6285282632984?text=${textSpec}`, "_blank", "noopener,noreferrer");
+                      window.open(`https://wa.me/6285722603355?text=${textSpec}`, "_blank", "noopener,noreferrer");
                     }}
-                    className="flex-1 py-3 bg-[#0066FF] hover:bg-blue-600 text-white font-semibold text-xs sm:text-sm rounded-xl text-center transition-all shadow-lg hover:shadow-blue-500/20 cursor-pointer"
+                    className="flex-1 py-3 bg-[#01F5FF] hover:bg-cyan-400 text-black font-extrabold text-xs sm:text-sm rounded-xl text-center transition-all shadow-lg hover:shadow-cyan-500/20 cursor-pointer"
                   >
                     Ingin Proyek Seperti Ini
                   </button>
+                  {selectedProject.liveUrl && (
+                    <a
+                      href={selectedProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-3 border border-cyan-400/20 hover:border-[#01F5FF] bg-white/5 hover:bg-cyan-500/10 text-[#01F5FF] text-xs sm:text-sm font-semibold rounded-xl text-center flex items-center justify-center space-x-1.5 transition-all cursor-pointer"
+                    >
+                      <span>Kunjungi Website Live</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                   <button
                     onClick={() => setSelectedProject(null)}
                     className="py-3 px-6 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white text-xs sm:text-sm font-semibold rounded-xl text-center transition-colors cursor-pointer"
