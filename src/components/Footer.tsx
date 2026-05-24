@@ -23,16 +23,16 @@ export default function Footer({ onNavigate }: FooterProps) {
           
           {/* Column 1: Brand & Desc */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2 cursor-pointer" onClick={() => onNavigate("beranda")}>
-              <div className="w-8 h-8 rounded bg-gradient-to-tr from-[#0066FF] to-cyan-400 flex items-center justify-center">
-                <span className="text-white font-extrabold text-base tracking-wider">H</span>
+            <div className="flex items-center space-x-2.5 cursor-pointer select-none" onClick={() => onNavigate("beranda")}>
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#0A84FF] to-[#01F5FF] flex items-center justify-center shadow-md">
+                <span className="text-black font-black text-base tracking-wider font-sans">H</span>
               </div>
               <div>
-                <span className="font-display font-bold text-white text-base block tracking-wide">
-                  PT HADIGITAL
+                <span className="font-display font-black text-white text-base block tracking-wide leading-none">
+                  HA<span className="text-[#01F5FF]">DIGITAL</span>
                 </span>
-                <span className="text-[9px] text-blue-400 tracking-widest block font-mono -mt-1 font-bold">
-                  OFFICIAL WEB
+                <span className="text-[8px] text-[#01F5FF]/80 tracking-[0.2em] block font-mono mt-1 font-bold">
+                  OFFICIAL
                 </span>
               </div>
             </div>
@@ -62,10 +62,10 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/6285282632984"
+                href="https://wa.me/6285722603355"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 hover:border-blue-500/20 hover:bg-emerald-500/10 text-gray-400 hover:text-white flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 hover:border-[#01F5FF]/20 hover:bg-emerald-500/10 text-gray-400 hover:text-white flex items-center justify-center transition-all"
                 title="WhatsApp CS"
               >
                 <Phone className="w-4 h-4" />
@@ -96,6 +96,12 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="text-left hover:text-white transition-colors cursor-pointer"
               >
                 Layanan
+              </button>
+              <button
+                onClick={() => onNavigate("paket")}
+                className="text-left hover:text-white transition-colors cursor-pointer"
+              >
+                Paket Website
               </button>
               <button
                 onClick={() => onNavigate("portofolio")}
@@ -137,15 +143,15 @@ export default function Footer({ onNavigate }: FooterProps) {
             </h4>
             <ul className="space-y-3 text-xs sm:text-sm text-gray-400">
               <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#01F5FF] shrink-0 mt-0.5" />
                 <a href="mailto:offocialhadigital@gmail.com" className="hover:text-white transition-colors break-all">
                   offocialhadigital@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <Phone className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-                <a href="https://wa.me/6285282632984" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  085282632984
+                <Phone className="w-4 h-4 text-[#01F5FF] shrink-0 mt-0.5" />
+                <a href="https://wa.me/6285722603355" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  085722603355
                 </a>
               </li>
               <li className="text-[11px] text-gray-500 font-mono italic leading-normal">
@@ -162,7 +168,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               LEGALITAS & JAMINAN
             </h4>
             <div className="bg-white/5 border border-white/5 p-4 rounded-xl space-y-2">
-              <span className="text-[10px] bg-blue-600/20 text-blue-400 font-bold px-2 py-0.5 rounded uppercase font-mono tracking-wider block w-fit">
+              <span className="text-[10px] bg-cyan-500/10 text-[#01F5FF] border border-[#01F5FF]/15 font-bold px-2 py-0.5 rounded uppercase font-mono tracking-wider block w-fit">
                 TERVERIFIKASI
               </span>
               <p className="text-[11px] text-gray-400 leading-normal">

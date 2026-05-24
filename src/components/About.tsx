@@ -8,28 +8,28 @@ export default function About() {
       count: "100+",
       sub: "UMKM & Korporasi",
       icon: ThumbsUp,
-      color: "from-blue-500 to-cyan-400"
+      color: "from-[#0A84FF] to-[#01F5FF]"
     },
     {
       label: "Proyek Selesai",
       count: "200+",
       sub: "Integrasi Sukses",
       icon: Briefcase,
-      color: "from-cyan-500 to-teal-400"
+      color: "from-[#01F5FF] to-teal-400"
     },
     {
       label: "Tim Profesional",
       count: "15+",
       sub: "Tenaga Ahli Bersertifikat",
       icon: Award,
-      color: "from-[#0066FF] to-blue-400"
+      color: "from-[#0A84FF] to-[#01F5FF]"
     },
     {
       label: "Tahun Pengalaman",
       count: "5+",
       sub: "Sejak Tahun 2021",
       icon: Calendar,
-      color: "from-blue-700 to-indigo-500"
+      color: "from-[#0A84FF] to-cyan-500"
     }
   ];
 
@@ -51,13 +51,13 @@ export default function About() {
           {/* Left Column - Copywriting & List */}
           <div className="space-y-8">
             <div className="space-y-3">
-              <span className="text-[11px] font-mono tracking-widest font-bold text-blue-400 uppercase">
+              <span className="text-[11px] font-mono tracking-widest font-bold text-[#01F5FF] uppercase">
                 TENTANG KAMI
               </span>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
                 Tentang PT HADIGITAL
               </h2>
-              <div className="h-1.5 w-20 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
+              <div className="h-1.5 w-20 bg-gradient-to-r from-[#0A84FF] to-[#01F5FF] rounded-full" />
             </div>
 
             <div className="space-y-4 text-gray-300">
@@ -71,13 +71,13 @@ export default function About() {
 
             {/* List checklist */}
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
+              <h4 className="text-xs font-mono font-bold text-[#01F5FF] uppercase tracking-widest">
                 MENGAPA MEMILIH PT HADIGITAL?
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {highlights.map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-2.5">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#01F5FF] shrink-0 mt-0.5" />
                     <span className="text-xs text-gray-300 leading-normal">{item}</span>
                   </div>
                 ))}
@@ -93,16 +93,16 @@ export default function About() {
                 <motion.div
                   key={idx}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl p-6 relative overflow-hidden group hover:border-[#0066FF]/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300"
+                  className="bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl p-6 relative overflow-hidden group hover:border-[#01F5FF]/30 hover:shadow-lg hover:shadow-[#01F5FF]/5 transition-all duration-300"
                 >
                   {/* Decorative glowing background gradient */}
-                  <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-300" />
+                  <div className="absolute -top-10 -right-10 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl group-hover:bg-[#01F5FF]/20 transition-all duration-300" />
                   
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400 group-hover:scale-110 transition-transform">
+                    <div className="p-3 bg-cyan-500/5 rounded-xl text-[#01F5FF] group-hover:scale-110 transition-transform">
                       <StatIcon className="w-6 h-6" />
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-blue-400 transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-[#01F5FF] transition-colors" />
                   </div>
 
                   <div className="space-y-1">

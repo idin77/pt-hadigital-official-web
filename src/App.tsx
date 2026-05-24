@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
+import Pricing from "./components/Pricing";
 import Portfolio from "./components/Portfolio";
 import Testimonials from "./components/Testimonials";
 import Articles from "./components/Articles";
@@ -10,6 +11,7 @@ import Calculator from "./components/Calculator";
 import Careers from "./components/Careers";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import WhatsAppFloating from "./components/WhatsAppFloating";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("beranda");
@@ -20,6 +22,7 @@ export default function App() {
       "beranda",
       "tentang",
       "layanan",
+      "paket",
       "portofolio",
       "artikel",
       "estimator",
@@ -78,6 +81,7 @@ export default function App() {
         <Hero onNavigate={handleNavigate} />
         <About />
         <Services />
+        <Pricing />
         <Portfolio />
         <Articles />
         <Calculator />
@@ -87,6 +91,9 @@ export default function App() {
 
       {/* Global Site Bottom */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Floating Active Elements */}
+      <WhatsAppFloating />
     </div>
   );
 }

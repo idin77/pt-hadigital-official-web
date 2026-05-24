@@ -42,7 +42,7 @@ export default function Services() {
 
   const handleWhatsAppConsultation = (serviceName: string) => {
     const textStr = encodeURIComponent(`Halo PT HADIGITAL, saya tertarik dengan Layanan *${serviceName}*. Bisakah saya melakukan konsultasi gratis lebih lanjut?`);
-    window.open(`https://wa.me/6285282632984?text=${textStr}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/6285722603355?text=${textStr}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -112,16 +112,10 @@ export default function Services() {
                 ))}
               </div>
 
-              {/* Price & Action button */}
-              <div className="flex items-center justify-between mt-auto">
-                <div>
-                  <span className="text-[10px] text-gray-400 block font-mono">TARIF MULAI</span>
-                  <span className="text-sm font-semibold text-cyan-400 font-mono">
-                    {service.priceRange.split(" ")[1] === "Mulai" ? service.priceRange : service.priceRange}
-                  </span>
-                </div>
+              {/* Details Action button */}
+              <div className="flex items-center justify-end mt-auto pt-2 border-t border-white/5">
                 <div className="flex items-center space-x-1 text-xs text-blue-400 font-semibold group-hover:text-white transition-colors">
-                  <span>Detail</span>
+                  <span>Lihat Detail Kelengkapan</span>
                   <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -202,23 +196,14 @@ export default function Services() {
                   </div>
 
                   {/* Summary Metas */}
-                  <div className="grid grid-cols-2 gap-4 bg-white/5 rounded-xl p-4 border border-white/5 font-mono">
+                  <div className="bg-white/5 rounded-xl p-4 border border-white/5 font-mono">
                     <div>
                       <span className="text-[10px] text-gray-500 block uppercase font-bold">
-                        WAKTU KERJA
+                        WAKTU ESTIMASI PENGERJAAN
                       </span>
-                      <div className="flex items-center space-x-1.5 mt-0.5 text-xs text-cyan-300 font-semibold">
+                      <div className="flex items-center space-x-1.5 mt-1 text-xs text-[#01F5FF] font-semibold">
                         <Calendar className="w-3.5 h-3.5" />
                         <span>{selectedService.processingTime}</span>
-                      </div>
-                    </div>
-                    <div>
-                      <span className="text-[10px] text-gray-500 block uppercase font-bold">
-                        ESTIMASI TARIF
-                      </span>
-                      <div className="flex items-center space-x-1 mt-0.5 text-xs text-emerald-400 font-semibold">
-                        <DollarSign className="w-3.5 h-3.5" />
-                        <span>{selectedService.priceRange}</span>
                       </div>
                     </div>
                   </div>
