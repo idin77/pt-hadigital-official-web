@@ -116,18 +116,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                 Artikel
               </button>
               <button
-                onClick={() => onNavigate("estimator")}
-                className="text-left hover:text-white transition-colors cursor-pointer"
-              >
-                Kalkulator Tarif
-              </button>
-              <button
-                onClick={() => onNavigate("karier")}
-                className="text-left hover:text-white transition-colors cursor-pointer"
-              >
-                Karier
-              </button>
-              <button
                 onClick={() => onNavigate("kontak")}
                 className="text-left hover:text-white transition-colors cursor-pointer"
               >

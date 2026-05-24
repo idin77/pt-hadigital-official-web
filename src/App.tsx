@@ -7,8 +7,6 @@ import Pricing from "./components/Pricing";
 import Portfolio from "./components/Portfolio";
 import Testimonials from "./components/Testimonials";
 import Articles from "./components/Articles";
-import Calculator from "./components/Calculator";
-import Careers from "./components/Careers";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppFloating from "./components/WhatsAppFloating";
@@ -25,8 +23,6 @@ export default function App() {
       "paket",
       "portofolio",
       "artikel",
-      "estimator",
-      "karier",
       "kontak"
     ];
 
@@ -55,9 +51,7 @@ export default function App() {
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
     
-    // For calculation or estimator, target the specific ID
-    const targetId = sectionId === "calculator" ? "estimator" : sectionId;
-    const element = document.getElementById(targetId);
+    const element = document.getElementById(sectionId);
     
     if (element) {
       const headerOffset = 70; // Offset for sticky navbar
@@ -84,8 +78,6 @@ export default function App() {
         <Pricing />
         <Portfolio />
         <Articles />
-        <Calculator />
-        <Careers />
         <Contact />
       </main>
 

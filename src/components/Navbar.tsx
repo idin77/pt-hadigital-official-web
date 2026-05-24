@@ -29,8 +29,6 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     { id: "paket", label: "Paket Website" },
     { id: "portofolio", label: "Portofolio" },
     { id: "artikel", label: "Artikel" },
-    { id: "estimator", label: "Kalkulator Tarif" },
-    { id: "karier", label: "Karier" },
     { id: "kontak", label: "Kontak" }
   ];
 
