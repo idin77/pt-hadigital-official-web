@@ -1,0 +1,6 @@
+{
+  "name": "PT HADIGITAL OFFICIAL WEB",
+  "description": "Website Resmi PT HADIGITAL OFFICIAL WEB - Solusi Digital Terpercaya Untuk Bisnis Anda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
