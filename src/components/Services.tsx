@@ -65,11 +65,11 @@ export default function Services() {
             LAYANAN UTAMA
           </span>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-            Elevasikan Bisnis Anda dengan Solusi Digital Terkini
+            Jasa Pembuatan Website Profesional untuk Elevasi Bisnis
           </h2>
           <div className="h-1.5 w-20 bg-gradient-to-r from-[#0066FF] to-cyan-400 rounded-full mx-auto" />
           <p className="text-sm sm:text-base text-gray-400">
-            Pilih ekosistem teknologi yang didesain presisi oleh tim hadigital untuk meningkatkan penetrasi target pasar, efisiensi waktu, dan keunggulan visual.
+            Layanan jasa pembuatan website PT HADIGITAL didesain presisi untuk meningkatkan penetrasi target pasar, efisiensi operasional, dan keunggulan visual brand Anda.
           </p>
         </div>
 

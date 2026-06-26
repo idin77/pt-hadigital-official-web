@@ -51,14 +51,14 @@ export default function Hero({ onNavigate }: HeroProps) {
               className="space-y-4"
             >
               <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1]">
-                Solusi Digital <br />
+                Jasa Pembuatan Website <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A84FF] via-[#01F5FF] to-white">
-                  Terpercaya
+                  Profesional
                 </span>{" "}
                 Untuk Bisnis Anda
               </h1>
               <p className="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed">
-                Kami membantu UMKM, perusahaan, dan brand berkembang pesat di kancah nasional melalui pembuatan teknologi digital modern, optimasi performa tinggi, dan strategi berorientasi hasil.
+                Kami adalah penyedia jasa pembuatan website profesional yang membantu UMKM dan perusahaan berkembang pesat melalui teknologi digital modern, optimasi SEO, dan desain yang berorientasi hasil.
               </p>
             </motion.div>
 
