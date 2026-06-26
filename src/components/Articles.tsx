@@ -127,7 +127,14 @@ export default function Articles() {
   };
 
   return (
-    <section id="artikel" className="relative py-24 bg-[#0B1F3A]/95 overflow-hidden border-t border-white/5">
+    <motion.section
+      id="artikel"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative py-24 bg-[#0B1F3A]/95 overflow-hidden border-t border-white/5"
+    >
       {/* Background visual accents */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -329,6 +336,6 @@ export default function Articles() {
         </AnimatePresence>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

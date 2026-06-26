@@ -46,7 +46,14 @@ export default function Services() {
   };
 
   return (
-    <section id="layanan" className="relative py-24 bg-[#0B1F3A]/95 overflow-hidden border-t border-white/5">
+    <motion.section
+      id="layanan"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative py-24 bg-[#0B1F3A]/95 overflow-hidden border-t border-white/5"
+    >
       {/* Background accents */}
       <div className="absolute top-0 right-1/4 w-[350px] h-[350px] bg-[#0066FF]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -238,6 +245,6 @@ export default function Services() {
         </AnimatePresence>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

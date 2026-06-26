@@ -41,7 +41,14 @@ export default function About() {
   ];
 
   return (
-    <section id="tentang" className="relative py-24 bg-[#0B1F3A] overflow-hidden">
+    <motion.section
+      id="tentang"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative py-24 bg-[#0B1F3A] overflow-hidden"
+    >
       {/* Background accents */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -123,6 +130,6 @@ export default function About() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

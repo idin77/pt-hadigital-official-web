@@ -24,7 +24,14 @@ export default function Portfolio() {
   }, [activeFilter]);
 
   return (
-    <section id="portofolio" className="relative py-24 bg-[#0B1F3A] overflow-hidden">
+    <motion.section
+      id="portofolio"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative py-24 bg-[#0B1F3A] overflow-hidden"
+    >
       {/* Background Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-[#0066FF]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
@@ -346,6 +353,6 @@ export default function Portfolio() {
         </AnimatePresence>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -95,7 +95,14 @@ Mohon informasi mengenai cara pemesanan dan alur pengerjaannya. Terima kasih!`;
   };
 
   return (
-    <section id="paket" className="relative py-24 bg-[#0B1F3A] overflow-hidden border-t border-white/5">
+    <motion.section
+      id="paket"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative py-24 bg-[#0B1F3A] overflow-hidden border-t border-white/5"
+    >
       {/* Visual Accents matching our futuristic brand */}
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
@@ -212,6 +219,6 @@ Mohon informasi mengenai cara pemesanan dan alur pengerjaannya. Terima kasih!`;
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

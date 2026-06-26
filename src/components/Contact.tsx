@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import { Mail, Phone, MapPin, MessageSquare, Send, CheckCircle } from "lucide-react";
 
 export default function Contact() {
@@ -33,7 +34,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="kontak" className="relative bg-[#0B1F3A] overflow-hidden">
+    <motion.section
+      id="kontak"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative bg-[#0B1F3A] overflow-hidden"
+    >
       
       {/* 1. Main Contact Form & Context Area */}
       <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -238,6 +246,6 @@ export default function Contact() {
         </div>
       </div>
 
-    </section>
+    </motion.section>
   );
 }

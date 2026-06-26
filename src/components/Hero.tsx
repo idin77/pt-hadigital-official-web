@@ -9,8 +9,12 @@ interface HeroProps {
 
 export default function Hero({ onNavigate }: HeroProps) {
   return (
-    <section
+    <motion.section
       id="beranda"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="relative min-h-screen pt-28 lg:pt-0 flex items-center bg-[#0B1F3A] overflow-hidden"
     >
       {/* Dynamic Background Mesh / Cyber Grids */}
@@ -159,6 +163,6 @@ export default function Hero({ onNavigate }: HeroProps) {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
