@@ -44,7 +44,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             {/* Social media anchors */}
             <div className="flex items-center space-x-3 pt-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61580729490854"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 hover:border-blue-500/20 hover:bg-blue-600/10 text-gray-400 hover:text-white flex items-center justify-center transition-all group"
@@ -53,7 +53,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <Facebook className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/hadi.gital12/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 hover:border-blue-500/20 hover:bg-rose-500/10 text-gray-400 hover:text-white flex items-center justify-center transition-all"

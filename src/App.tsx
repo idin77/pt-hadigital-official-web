@@ -7,6 +7,7 @@ import Pricing from "./components/Pricing";
 import Portfolio from "./components/Portfolio";
 import Testimonials from "./components/Testimonials";
 import Articles from "./components/Articles";
+import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppFloating from "./components/WhatsAppFloating";
@@ -23,6 +24,7 @@ export default function App() {
       "paket",
       "portofolio",
       "artikel",
+      "faq",
       "kontak"
     ];
 
@@ -78,6 +80,7 @@ export default function App() {
         <Pricing />
         <Portfolio />
         <Articles />
+        <FAQ />
         <Contact />
       </main>
 
