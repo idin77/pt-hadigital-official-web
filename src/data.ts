@@ -141,6 +141,18 @@ export const portfolios: PortfolioItem[] = [
     year: "2026",
     techStack: ["React", "Tailwind CSS", "Next.js Framework"],
     liveUrl: "https://saloncantikpermata.hadigital.web.id/"
+  },
+  {
+    id: "port-5",
+    title: "Website Mitra Bersih Karawang",
+    category: "Professional Cleaning Service",
+    categoryLabel: "service",
+    image: "/src/assets/images/mitra_bersih_portfolio_1779632493555.jpg",
+    description: "Website profesional untuk jasa sedot WC dan kebersihan komersial di Karawang dengan sistem pemesanan online cepat dan terpercaya.",
+    client: "Mitra Bersih",
+    year: "2026",
+    techStack: ["React", "Tailwind CSS", "Vite"],
+    liveUrl: "https://mitrabersih.sedotwckarawang.id/"
   }
 ];
 
