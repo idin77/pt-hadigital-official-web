@@ -62,7 +62,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/6285722603355"
+                href="https://wa.me/6285716551653"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 border border-white/5 hover:border-[#01F5FF]/20 hover:bg-emerald-500/10 text-gray-400 hover:text-white flex items-center justify-center transition-all"
@@ -138,8 +138,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="w-4 h-4 text-[#01F5FF] shrink-0 mt-0.5" />
-                <a href="https://wa.me/6285722603355" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  085722603355
+                <a href="https://wa.me/6285716551653" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  085716551653
                 </a>
               </li>
               <li className="text-[11px] text-gray-500 font-mono italic leading-normal">

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hadigital.tech/sitemap.xml

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, MessageSquare, Send, CheckCircle } from "lucide-react";
+import MapLocation from "./MapLocation";
 
 export default function Contact() {
   const [userName, setUserName] = useState("");
@@ -30,7 +31,7 @@ export default function Contact() {
 
   const handleCTAWhatsApp = () => {
     const textStr = encodeURIComponent("Halo PT HADIGITAL! Saya melihat penawaran menarik di website Anda dan ingin segera memulai kerja sama bisnis.");
-    window.open("https://wa.me/6285722603355?text=" + textStr, "_blank", "noopener,noreferrer");
+    window.open("https://wa.me/6285716551653?text=" + textStr, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -78,7 +79,7 @@ export default function Contact() {
               
               {/* WhatsApp direct */}
               <a
-                href="https://wa.me/6285722603355"
+                href="https://wa.me/6285716551653"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-4 p-4 bg-white/5 hover:bg-[#01F5FF]/10 border border-white/5 hover:border-[#01F5FF]/10 rounded-xl transition-all group"
@@ -88,7 +89,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] text-gray-400 block font-mono">WHATSAPP CHAT (FAST RESPONSE)</span>
-                  <span className="text-sm font-semibold text-white block mt-0.5">085722603355</span>
+                  <span className="text-sm font-semibold text-white block mt-0.5">085716551653</span>
                 </div>
               </a>
 
@@ -120,6 +121,7 @@ export default function Contact() {
                   </span>
                 </div>
               </div>
+              <MapLocation />
 
             </div>
           </div>
@@ -240,7 +242,7 @@ export default function Contact() {
               <span>Hubungi Sekarang (WhatsApp)</span>
             </button>
             <span className="text-xs sm:text-sm font-mono text-white/95 tracking-wide uppercase font-semibold">
-              Call WA CS: <span className="underline decoration-cyan-300 font-bold">085722603355</span>
+              Call WA CS: <span className="underline decoration-cyan-300 font-bold">085716551653</span>
             </span>
           </div>
         </div>

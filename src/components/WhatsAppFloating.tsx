@@ -22,7 +22,7 @@ export default function WhatsAppFloating() {
     };
   }, []);
 
-  const waNumber = "6285722603355";
+  const waNumber = "6285716551653";
   const presetMessage = "Halo PT HADIGITAL, saya tertarik dengan layanan digital Anda. Boleh berkonsultasi?";
   const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(presetMessage)}`;
 
